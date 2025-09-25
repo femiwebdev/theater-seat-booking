@@ -1,1 +1,67 @@
 
+<!doctype html>
+<html lang="en"></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Theater Seat Booking — Responsive Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Theater Seat Booking</h1>
+      <p class="subtitle">Responsive seat map demo — tap seats to select, use controls to reserve.</p>
+    </header>
+
+    <main class="stage-area">
+      <div class="screen">SCREEN</div>
+
+      <div class="theater-wrap">
+        <!-- optional visual seat guide -->
+        <div class="seat-guide">
+          <img src="../seat guide.png" alt="seat guide" />
+        </div>
+
+        <div id="seating" class="seating" aria-label="Seating map"></div>
+      </div>
+
+  <aside id="controls" class="controls" aria-labelledby="controlsLabel">
+        <h2 id="controlsLabel" class="visually-hidden">Controls</h2>
+        <div class="legend">
+          <div><span class="seat sample available" aria-hidden="true"></span> Available</div>
+          <div><span class="seat sample selected" aria-hidden="true"></span> Selected</div>
+          <div><span class="seat sample vip" aria-hidden="true"></span> VIP</div>
+          <div><span class="seat sample reserved" aria-hidden="true"></span> Reserved</div>
+        </div>
+
+        <div class="info">
+          <label>Tickets:</label>
+          <div id="selectedCount">0</div>
+          <label>Selected seats:</label>
+          <div id="selectedList">—</div>
+          <label>Total price:</label>
+          <div id="totalPrice">$0</div>
+        </div>
+
+        <div class="actions">
+          <button id="clearBtn" class="btn ghost">Clear</button>
+          <button id="reserveBtn" class="btn primary">Reserve</button>
+        </div>
+      </aside>
+      
+      <!-- bottom compact controls for small screens (mirrors aside) -->
+      <nav id="compactControls" class="compact-controls" aria-hidden="true">
+        <div class="compact-left">
+          <div class="legend-compact"><span class="seat sample available" aria-hidden="true"></span><span class="seat sample selected" aria-hidden="true"></span></div>
+        </div>
+        <div class="compact-right">
+          <button id="compactReserve" class="btn primary">Reserve</button>
+        </div>
+      </nav>
+    </main>
+
+    <footer class="footer-note">This is a UI demo. Seat mapping is stored in data-* attributes for later integration.</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
